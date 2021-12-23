@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Lecture 1: C",
+    "logo": "fab fa-cuttlefish",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 2: Array",
+    "logo": "fas fa-code-branch",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 3: Algorithms",
+    "logo": "fas fa-code",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 4: Memory",
+    "logo": "fas fa-microchip",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 5: Data Structures",
+    "logo": "fab fa-codepen",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 6: Python",
+    "logo": "fab fa-python",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 7: SQL",
+    "logo": "fas fa-database",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 8: HTML, CSS, Javascript",
+    "logo": "fab fa-css3",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  },
+  {
+    "title": "Lecture 9: Flask",
+    "logo": "fas fa-flask",
+    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+  }
+]
