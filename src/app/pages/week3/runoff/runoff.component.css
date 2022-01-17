@@ -1,0 +1,40 @@
+/* div, p, span {
+    display: block;
+    color: grey;
+    padding: 5px;
+    margin: 5px;
+    border: 5px solid black;
+} */
+
+/* #div2 {
+    color: red;
+    border: 5px solid red;
+}
+
+div span {
+    color: blue;
+    border: 5px solid lightgreen;
+} */
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sub-container {
+    flex-grow: 0.25;
+    border: 2px solid black;
+}
+
+@media (max-width: 720px) {
+    .sub-container {
+        width: calc(50% - 2px)
+    }
+}
+
+@media (max-width: 360px) {
+    .sub-container {
+        width: calc(100% - 2px)
+    }
+}

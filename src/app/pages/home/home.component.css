@@ -1,28 +1,4 @@
-  :host {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      font-size: 14px;
-      color: #333;
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-      margin: 8px 0;
-  }
-
-  p {
-      margin: 0;
-  }
-
-  .spacer {
-      flex: 1;
-  }
+  /* -----------------Styles Header----------------- */
 
   .content {
       display: flex;
@@ -94,7 +70,7 @@
 
   .card.highlight-card {
       background-color: #1976d2;
-      color: white;
+      color: #fff;
       font-weight: 600;
       border: none;
       width: auto;
@@ -113,29 +89,23 @@
       top: -24px;
   }
 
-  svg#rocket-smoke {
-      height: calc(100vh - 95px);
-      position: absolute;
-      top: 10px;
-      right: 180px;
-      z-index: -10;
-  }
-
   a,
   a:visited,
   a:hover {
-      color: #1976d2;
+      color: #45050C;
       text-decoration: none;
   }
 
   a:hover {
-      color: #125699;
+      color: #45050c56;
   }
+
+  /* -----------------Terminal----------------- */
 
   .terminal {
       position: relative;
       width: 80%;
-      max-width: 600px;
+      max-width: 400px;
       border-radius: 6px;
       padding-top: 45px;
       margin-top: 8px;
@@ -202,6 +172,11 @@
       font-size: 1rem;
   }
 
+  .modal {
+      z-index: 1055 !important;
+  }
+
+  /* -----------------Carousel----------------- */
 
   .card-carousel, #carouselExampleInterval {
       width: 350px;
@@ -209,4 +184,40 @@
       background-color: transparent;
       border: none;
       align-items: flex-start;
+      overflow: hidden;
+  }
+
+  /* -----------------Modal----------------- */
+
+  .modal-body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 1rem;
+  }
+
+  .reactive-text {
+      position: absolute;
+      font-size: 10px;
+  }
+
+  /* -----------------Footer----------------- */
+
+  .circle-link {
+      height: 40px;
+      width: 40px;
+      border-radius: 40px;
+      background-color: white;
+      border: 1px solid #eeeeee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+      transform: translateY(-0.25rem);
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   }

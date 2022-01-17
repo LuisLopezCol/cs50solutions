@@ -1,3 +1,4 @@
+<!-- <ng-scrollbar _ngcontent-sbf-c69="" autoheightdisabled="true" _nghost-sbf-c29="" class="ng-scrollbar"> -->
 <div class="content" role="main">
     <!-- Highlight Card -->
     <div class="card highlight-card card-small">
@@ -18,18 +19,12 @@
             </g>
         </svg>
         <span class="fs-6">¿Are You Stucked?</span>
-        <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632"
-            viewBox="0 0 516.119 1083.632">
-            <path id="Path_40" data-name="Path 40"
-                d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z"
-                transform="translate(-147.025 -140.939)" fill="#f5f5f5" />
-        </svg>
     </div>
     <!-------------- Content --------------->
     <h2>¡Let me Help You!</h2>
     <p>Find the solution and walkthrough for all CS50 problems here:</p>
     <div class="card-container mt-4">
-        <div class="card-container-child mx-4" *ngFor="let content of contentDB">
+        <div class="card-container-child mx-4" *ngFor="let content of contentDB" (click)=" updateModal(content, true)">
             <!-- Card -->
             <a type="button" class="card modal-dialog-centered" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 <i class="{{content.logo}} fs-5 text-secondary me-2"></i>
@@ -39,17 +34,18 @@
                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
                 </svg> </a>
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">{{content.title}}</h5>
+                            <h3 class="modal-title fw-bold" id="staticBackdropLabel">{{modalContent.title}}</h3>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body p-0 py-3">
-                            <div *ngFor="let links of content.solutions" class="col-5">
-                                <a mat-stroked-button routerLink=" /" class="col-10 mx-4 py-1 my-1">{{links}}</a>
+                            <div *ngFor="let links of modalContent.solutions" class="col-5">
+                                <a mat-stroked-button routerLink="/{{modalContent.week}}/{{links}}"
+                                    class="col-10 mx-4 py-1 my-1" data-bs-dismiss="modal">{{links}}</a>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -62,7 +58,7 @@
     </div>
     <div style="background-color: #bbbbbb; height: 1px; margin: 40px;" class="w-50"></div>
     <!-------------- Support --------------->
-    <h2>¿Would You Like To Support Me?</h2>
+    <h2>¿Would you like to support me?</h2>
     <p>You can buy me a coffe</p>
     <a href="https://www.buymeacoffee.com/Fercholo0730" target="_blank" class="links my-3">
         <img src="../../../assets/buycoffe2.png" width="200px" alt=""></a>
@@ -72,34 +68,104 @@
     <p>Testimonials:</p>
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval=" 5000">
+            <div class="carousel-item active" data-bs-interval=" 6000">
                 <div class="card-carousel p-2">
                     <div class="card-body m-0 p-0">
-                        <h4 class="card-title">Katherine Barrera:</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.
-                            content.</p>
+                        <h4 class="card-title">Luis López:</h4>
+                        <p class="card-text">Thanks for visiting my application, this is an open source proect, feel
+                            free to use it, improve it or share it, I really hope this can be useful to you and hope
+                            you
+                            can give some love to ssupport more content like this. I Am Luis López, a Web Developer
+                            From
+                            Colombia creating content to endure the developement community.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item" data-bs-interval=" 5000">
+            <div class="carousel-item" data-bs-interval=" 6000" *ngFor="let message of listMessages">
                 <div class="card-carousel p-2">
                     <div class="card-body m-0 p-0">
-                        <h4 class="card-title">Other Other:</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
+                        <h4 class="card-title">{{message.name}}:</h4>
+                        <p class="card-text">{{message.message}} </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Button trigger modal -->
+    <button mat-stroked-button class="mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+            class="fas fa-envelope-open-text"></i> Leave your comment</button>
+    <!-- Modal Testimonial -->
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fw-bold" id="exampleModalLabel">Testimonial:</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="modal-body" [formGroup]="messageForm" (ngSubmit)="postMessage()">
+                    <div class="mb-4 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Your name:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="First and last name" formControlName="nameMessage">
+                        <span class="reactive-text text-danger fw-bold"
+                            *ngIf="messageForm.get('nameMessage')?.hasError('required') && messageForm.get('nameMessage')?.touched">Required</span>
+                    </div>
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlTextarea1" class="form-label">Your comment here:</label>
+                        <textarea #text formControlName="messageMessage" class="form-control"
+                            id="exampleFormControlTextarea1" rows="3" placeholder="Message" data-attr="350"
+                            required="true" value="350" maxlength="350" (keypress)="valueChange(text.value)"
+                            (keydown)="valueChange(text.value)"></textarea>
+                        <span class="reactive-text text-danger fw-bold"
+                            *ngIf="messageForm.get('messageMessage')?.hasError('required') && messageForm.get('messageMessage')?.touched">Required</span>
+                        <div class="d-flex justify-content-end  max-characters-limit">
+                            <span id="characterCount">{{remainingText}} characters left</span>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button mat-raised-button color="warn" data-bs-dismiss="modal">Close</button>
+                    <button mat-raised-button color="primary" (click)="postMessage()" class="ms-2"
+                        data-bs-dismiss="modal" [disabled]="messageForm.invalid">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #bbbbbb; height: 1px; margin-top: 40px; margin-bottom: 10px;" class="w-50 my-4">
+    </div>
     <!-------------- Terminal - Thanks message --------------->
     <div class="terminal">
-        <P class="text-light ms-3 mb-3">Thnaks for visiting, hope you enjoyed it!</P>
+        <P class="text-light ms-3 mb-3 d-flex flex-column">
+            <a href="https://github.com/LuisLopezCol/cs50solutions" target="_blank" rel="noopener"
+                style="text-decoration: none; color: #fff;" class="text-center">
+                <button mat-stroked-button><i class="far fa-star"></i> Give
+                    this repo a star</button>
+            </a>
+        </P>
     </div>
     <div style="background-color: #bbbbbb; height: 1px; margin-top: 40px; margin-bottom: 10px;" class="w-50"></div>
+    <!-------------- Footer --------------->
+    <!-- Links -->
+    <div class="card-container d-flex flex-wrap justify-content-center mb-4">
+        <a class="circle-link mx-3" title="Contact me via Discord" href="https://www.meetup.com/find/?keywords=angular"
+            target="_blank" rel="noopener">
+            <button mat-fab style="background-color: #1976d2;">
+                <i class="fab fa-discord fs-4"></i>
+            </button>
+        </a>
+        <a class="circle-link mx-3" title="Contact me via Telegram" href="https://www.meetup.com/find/?keywords=angular"
+            target="_blank" rel="noopener">
+            <button mat-fab style="background-color: #1976d2;">
+                <i class="fab fa-telegram-plane fs-4"></i>
+            </button>
+        </a>
+        <a class="circle-link mx-3" title="github-box" href="https://github.com/LuisLopezCol" target="_blank"
+            rel="noopener">
+            <button mat-fab style="background-color: #1976d2;">
+                <i class="fab fa-github fs-4"></i>
+            </button>
+        </a>
+    </div>
 </div>
+<!-- </ng-scrollbar> -->

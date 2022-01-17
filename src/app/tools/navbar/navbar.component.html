@@ -1,8 +1,8 @@
 <!-------------- Navbar --------------->
 <div class="toolbar" role="banner">
-    <div style="cursor: pointer;" routerLink=" /home">
-        <img width="40" alt="Angular Logo" src="../../../assets/Logo2.png" />
-        <span>CS50 Walkthrough</span>
+    <div style="cursor: pointer;" routerLink="/home">
+        <img class="links" width="40" alt="Angular Logo" src="../../../assets/Logo2.png" />
+        <span class="fs-6">CS50 SOLUTIONS</span>
     </div>
     <div class="spacer"></div>
     <a class="fs-4 text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
@@ -10,123 +10,36 @@
     </a>
     <a aria-label="Angular on twitter" title="Solutions" class="text-center me-4" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
-        <i class="far fa-lightbulb text-light fs-4 links"></i>
-        <p class="text-light fw-normal m-0 " style="cursor: pointer;">Solutions</p>
+        <i class="fas fa-user-secret text-light fs-4 links"></i>
+        <p class="text-navbar fw-normal m-0 " style="cursor: pointer;">Solutions</p>
     </a>
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://cs50.harvard.edu/college/2021/fall/"
         title="CS50" class="text-center me-4">
         <img height="24"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Harvard_Crimson_logo.svg/868px-Harvard_Crimson_logo.svg.png"
             alt="Harvard_logo" class="links">
-        <p class="text-light fw-normal m-0" style="cursor: pointer;">CS50</p>
+        <p class="text-navbar fw-normal m-0" style="cursor: pointer;">CS50</p>
     </a>
 </div>
 
 <!-------------- Offcanvas --------------->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title fs-6 fw-bold" id="offcanvasExampleLabel">CS50 Solutions</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-        <mat-expansion-panel hideToggle class="mt-2">
+    <div class="offcanvas-body" class="p-2" *ngFor="let content of contentDB">
+        <mat-expansion-panel>
             <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 1</mat-panel-title>
-                <mat-panel-description>C</mat-panel-description>
+                <mat-panel-title>{{content.title}}</mat-panel-title>
+                <mat-panel-description><i class="{{content.logo}} fs-5 text-secondary me-2"></i>
+                </mat-panel-description>
             </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 2</mat-panel-title>
-                <mat-panel-description>Arrays</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 3</mat-panel-title>
-                <mat-panel-description>Algorithms</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 4</mat-panel-title>
-                <mat-panel-description>Memory</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 5</mat-panel-title>
-                <mat-panel-description>Data Structures</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 6</mat-panel-title>
-                <mat-panel-description>Python</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 7</mat-panel-title>
-                <mat-panel-description>SQL</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 8</mat-panel-title>
-                <mat-panel-description>HTML, CSS, Javascript</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
-        </mat-expansion-panel>
-        <mat-expansion-panel hideToggle class="mt-2">
-            <mat-expansion-panel-header class="header-exp">
-                <mat-panel-title>Week 9</mat-panel-title>
-                <mat-panel-description>Flask</mat-panel-description>
-            </mat-expansion-panel-header>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Hello</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Easy</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Mario Difficult</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Cash</a>
-            <a class="dropdown-item" routerLink=" /">Problem Set 1 - Credit</a>
+            <div *ngFor="let links of content.solutions">
+                <a data-bs-dismiss="offcanvas" class="dropdown-item" routerLink="/{{content.week}}/{{links}}">Problem
+                    Set {{content.week}} -
+                    {{links}}</a>
+            </div>
         </mat-expansion-panel>
     </div>
 </div>

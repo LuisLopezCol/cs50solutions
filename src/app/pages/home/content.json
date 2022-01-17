@@ -1,45 +1,54 @@
 [
   {
+    "week": "Week-1",
     "title": "Lecture 1: C",
     "logo": "fab fa-cuttlefish",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Hello", "Mario_Easy", "Mario_Difficult", "Cash", "Credit"]
   },
   {
+    "week": "Week-2",
     "title": "Lecture 2: Array",
     "logo": "fas fa-code-branch",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Scrabble", "Readability", "Caesar", "Substitution"]
   },
   {
+    "week": "Week-3",
     "title": "Lecture 3: Algorithms",
     "logo": "fas fa-code",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Sort", "Plurality", "Runoff", "Tideman"]
   },
   {
+    "week": "Week-1",
     "title": "Lecture 4: Memory",
     "logo": "fas fa-microchip",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["test", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
   },
   {
+    "week": "Week-1",
     "title": "Lecture 5: Data Structures",
     "logo": "fab fa-codepen",
     "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
   },
   {
+    "week": "Week-1",
     "title": "Lecture 6: Python",
     "logo": "fab fa-python",
     "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
   },
   {
+    "week": "Week-1",
     "title": "Lecture 7: SQL",
     "logo": "fas fa-database",
     "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
   },
   {
+    "week": "Week-1",
     "title": "Lecture 8: HTML, CSS, Javascript",
     "logo": "fab fa-css3",
     "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
   },
   {
+    "week": "Week-1",
     "title": "Lecture 9: Flask",
     "logo": "fas fa-flask",
     "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]

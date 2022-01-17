@@ -34,3 +34,42 @@ p {
 .spacer {
     flex: 1;
 }
+
+.ng-scrollbar[_ngcontent-sbf-c69] {
+    flex: 1;
+    --scrollbar-thumb-color: #45050c;
+    --scrollbar-track-color: #8b622063;
+    --scrollbar-size: 7px;
+    --scrollbar-padding: 5px;
+    --scrollbar-hover-size: 10px;
+    --scrollbar-cursor: pointer;
+    --scrollbar-border: 10px;
+    z-index: 12;
+}
+
+.links:hover {
+    cursor: pointer;
+    color: #cc0033 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.neon1 {
+    color: #00f7ff !important;
+}
+
+.neon2 {
+    color: #33FF00 !important;
+}
+
+.neon3 {
+    color: #faed27 !important;
+}
+
+.neon4 {
+    color: #ff8000 !important;
+}
+
+.neon5 {
+    color: #f80000 !important;
+}

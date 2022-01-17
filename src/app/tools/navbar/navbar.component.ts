@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import contentDB from "../../pages/home/content.json";
 
+interface Content{
+  week: String;
+  title: String;
+  logo: String;
+  solutions: any
+}
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +14,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  contentDB: Content[] = contentDB;
 
   constructor() { }
 
