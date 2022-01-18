@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Cs50Service } from 'src/app/services/cs50.service';
 import Swal from 'sweetalert2';
 import { RATING } from 'src/app/models/rating';
+// import { FileSaverModule, FileSaverService } from 'ngx-filesaver';
 
 @Component({
   selector: 'app-sort',
@@ -17,12 +18,26 @@ export class SortComponent implements OnInit {
   constructor(private cs50Service:Cs50Service, private router: Router) { }
 
   @ViewChild("viewer") viewerRef!: ElementRef;
-
+  downloadFile(file: string){
+    this.cs50Service.downloadFile(file).subscribe(res => {  
+      if (res) {
+        const url = window.URL.createObjectURL(this.reuturnBlob(res));
+        window.open(url);
+        console.log("works");
+      }
+    }, error =>{
+      console.log(error);
+    })
+  }
+  reuturnBlob(res: any): any{
+    console.log("file downloaded");
+    return new Blob([res], { type: "text/plain" });
+  }
   ngOnInit(): void {
     this.getRating(this.ratingID);
   }
 
-    //--------------------Fetch rating from DB--------------------//
+  //--------------------Fetch rating from DB--------------------//
   //To be uesd to store the JSON imported from the DB
   currentRate: number = 0;
   currentVotes: number = 0;

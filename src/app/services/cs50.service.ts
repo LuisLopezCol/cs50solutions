@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CS50 } from 'src/app/models/cs50';
 import { RATING } from 'src/app/models/rating';
+import { parseMappings } from '@angular/compiler-cli/src/ngtsc/sourcemaps/src/source_file';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class Cs50Service {
 
   //-------------------Testimonials-------------------
   
-  urlmessages  = "http://localhost:5555/cs50/"
+  urlmessages  = "http://localhost:5555/cs50/";
   
   postMessage(message: CS50): Observable<any>{
     return this.http.post(this.urlmessages, message);
@@ -25,7 +26,7 @@ export class Cs50Service {
 
   //-------------------Rating-------------------
   
-  urlrating  = "http://localhost:5555/cs50/rating/"
+  urlrating  = "http://localhost:5555/cs50/rating/";
   // urlrating  = "https://crudbackendllopez.herokuapp.com/cs50/rating/"
   
   postRating(rating: RATING): Observable<any>{
@@ -35,12 +36,24 @@ export class Cs50Service {
   getRatings(): Observable<any>{
     return this.http.get(this.urlrating);
   }
-
+  
   getRating(id: any): Observable<any>{
     return this.http.get(`${this.urlrating}/${id}`);
   }
   
   putRating(id: string, rating: RATING):Observable<any>{
-		return this.http.put(`${this.urlrating}/${id}`, rating);
+    return this.http.put(`${this.urlrating}/${id}`, rating);
 	}
+  
+  //-------------------Download Files-------------------
+
+
+  urldownload  = "http://localhost:5555/cs50/download";
+  downloadFile(file: string): Observable<any>{
+    const param = new HttpParams().set("filename", file);
+    const options = {
+      params: param
+    };
+    return this.http.get(this.urldownload, {...options, responseType:'blob'});
+  }
 }

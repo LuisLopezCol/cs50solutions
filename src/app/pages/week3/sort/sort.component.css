@@ -130,6 +130,13 @@ mat-panel-description {
     overflow: hidden;
 }
 
+.btn-primary {
+    width: 160px;
+    font-size: 14px;
+    margin: 5px;
+    padding: 8px;
+}
+
 /* ----------Rating---------- */
 .rating {
     display: flex;

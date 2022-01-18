@@ -28,6 +28,7 @@
     "bootstrap": "^5.1.3",
     "jquery": "^3.6.0",
     "marked": "^4.0.8",
+    "net": "^1.0.2",
     "ng-gist": "^1.0.2",
     "ng2-pdf-viewer": "^7.0.2",
     "ngx-bar-rating": "^2.0.0",
@@ -39,7 +40,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.0.2",
+    "@angular-devkit/build-angular": "^13.1.3",
     "@angular/cli": "~13.0.2",
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
