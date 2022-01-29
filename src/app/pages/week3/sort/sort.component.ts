@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Cs50Service } from 'src/app/services/cs50.service';
 import Swal from 'sweetalert2';
 import { RATING } from 'src/app/models/rating';
-// import { FileSaverModule, FileSaverService } from 'ngx-filesaver';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-sort',
@@ -14,25 +14,34 @@ export class SortComponent implements OnInit {
 
   panelOpenState = false;
   rated = true;
+  fileUrl: any;
   ratingID: string = "61def9eac200b348c785f2ec";
-  constructor(private cs50Service:Cs50Service, private router: Router) { }
+  constructor(private cs50Service:Cs50Service, private router: Router, private sanitizer: DomSanitizer) { }
 
   @ViewChild("viewer") viewerRef!: ElementRef;
   downloadFile(file: string){
     this.cs50Service.downloadFile(file).subscribe(res => {  
       if (res) {
-        const url = window.URL.createObjectURL(this.reuturnBlob(res));
-        window.open(url);
-        console.log("works");
+        const url = window.URL.createObjectURL(this.reuturnBlob(res)); 
+        window.open(url); // To open the file in a new window
+        let a = document.createElement('a'); //To download the file
+        var filename = file;
+        document.body.appendChild(a);
+        a.setAttribute('style', 'display: none');
+        a.href = url;
+        a.download = filename;
+        a.click();
+        window.URL.revokeObjectURL(url);
+        a.remove();
       }
     }, error =>{
-      console.log(error);
+      console.log(error, "error while downloading the file");
     })
   }
   reuturnBlob(res: any): any{
     console.log("file downloaded");
-    return new Blob([res], { type: "text/plain" });
-  }
+    return new Blob([res], { type: "text/plain" });  }
+
   ngOnInit(): void {
     this.getRating(this.ratingID);
   }

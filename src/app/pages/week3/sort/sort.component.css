@@ -130,11 +130,12 @@ mat-panel-description {
     overflow: hidden;
 }
 
-.btn-primary {
+.btn-light {
     width: 160px;
     font-size: 14px;
     margin: 5px;
     padding: 8px;
+    border: 1px solid lightgray;
 }
 
 /* ----------Rating---------- */

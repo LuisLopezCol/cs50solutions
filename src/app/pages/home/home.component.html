@@ -1,4 +1,3 @@
-<!-- <ng-scrollbar _ngcontent-sbf-c69="" autoheightdisabled="true" _nghost-sbf-c29="" class="ng-scrollbar"> -->
 <div class="content" role="main">
     <!-- Highlight Card -->
     <div class="card highlight-card card-small">
@@ -26,20 +25,21 @@
     <div class="card-container mt-4">
         <div class="card-container-child mx-4" *ngFor="let content of contentDB" (click)=" updateModal(content, true)">
             <!-- Card -->
-            <a type="button" class="card modal-dialog-centered" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <a type="button" class="card modal-dialog-centered" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="{{content.logo}} fs-5 text-secondary me-2"></i>
                 <span class="text-secondary fw-bold">{{content.title}}</span>
                 <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     viewBox="0 0 24 24">
                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-                </svg> </a>
+                </svg>
+            </a>
             <!-- Modal -->
-            <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h3 class="modal-title fw-bold" id="staticBackdropLabel">{{modalContent.title}}</h3>
+                            <h3 class="modal-title fw-bold">{{modalContent.title}}</h3>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body p-0 py-3">
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
@@ -168,4 +168,3 @@
         </a>
     </div>
 </div>
-<!-- </ng-scrollbar> -->

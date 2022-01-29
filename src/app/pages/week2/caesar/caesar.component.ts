@@ -46,7 +46,7 @@ export class CaesarComponent implements OnInit {
     console.log(parseInt(this.totalRanking));
     
     const RATING: RATING = {
-      name: "hello",
+      name: "caesar",
 			rating: this.updatedRating,
       votes: this.updatedVotes,
 		}

@@ -33,6 +33,20 @@ import { SortComponent } from './pages/week3/sort/sort.component';
 import { PluralityComponent } from './pages/week3/plurality/plurality.component';
 import { RunoffComponent } from './pages/week3/runoff/runoff.component';
 import { TidemanComponent } from './pages/week3/tideman/tideman.component';
+import { PopulationComponent } from './pages/week1/population/population.component';
+import { VolumeComponent } from './pages/week4/volume/volume.component';
+import { FilterEasyComponent } from './pages/week4/filter-easy/filter-easy.component';
+import { FilterDifficultComponent } from './pages/week4/filter-difficult/filter-difficult.component';
+import { RecoverComponent } from './pages/week4/recover/recover.component';
+import { RinheritanceComponent } from './pages/week5/rinheritance/rinheritance.component';
+import { SpellerComponent } from './pages/week5/speller/speller.component';
+import { SongsComponent } from './pages/week7/songs/songs.component';
+import { MoviesComponent } from './pages/week7/movies/movies.component';
+import { FiftyvilleComponent } from './pages/week7/fiftyville/fiftyville.component';
+import { TriviaComponent } from './pages/week8/trivia/trivia.component';
+import { HomepageComponent } from './pages/week8/homepage/homepage.component';
+import { BirthdaysComponent } from './pages/week9/birthdays/birthdays.component';
+import { FinanceComponent } from './pages/week9/finance/finance.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +66,21 @@ import { TidemanComponent } from './pages/week3/tideman/tideman.component';
     SortComponent,
     PluralityComponent,
     RunoffComponent,
-    TidemanComponent
+    TidemanComponent,
+    PopulationComponent,
+    VolumeComponent,
+    FilterEasyComponent,
+    FilterDifficultComponent,
+    RecoverComponent,
+    RinheritanceComponent,
+    SpellerComponent,
+    SongsComponent,
+    MoviesComponent,
+    FiftyvilleComponent,
+    TriviaComponent,
+    HomepageComponent,
+    BirthdaysComponent,
+    FinanceComponent
   ],
   imports: [
     NgGistModule,

@@ -46,7 +46,7 @@ export class SubstitutionComponent implements OnInit {
     console.log(parseInt(this.totalRanking));
     
     const RATING: RATING = {
-      name: "hello",
+      name: "substitution",
 			rating: this.updatedRating,
       votes: this.updatedVotes,
 		}

@@ -3,7 +3,14 @@
     "week": "Week-1",
     "title": "Lecture 1: C",
     "logo": "fab fa-cuttlefish",
-    "solutions": ["Hello", "Mario_Easy", "Mario_Difficult", "Cash", "Credit"]
+    "solutions": [
+      "Hello",
+      "Population",
+      "Mario_Easy",
+      "Mario_Difficult",
+      "Cash",
+      "Credit"
+    ]
   },
   {
     "week": "Week-2",
@@ -18,39 +25,47 @@
     "solutions": ["Sort", "Plurality", "Runoff", "Tideman"]
   },
   {
-    "week": "Week-1",
+    "week": "Week-4",
     "title": "Lecture 4: Memory",
     "logo": "fas fa-microchip",
-    "solutions": ["test", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Volume", "Filter_Easy", "Filter_Difficult", "Recover"]
   },
   {
-    "week": "Week-1",
+    "week": "Week-5",
     "title": "Lecture 5: Data Structures",
     "logo": "fab fa-codepen",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Inheritance", "Speller"]
   },
   {
-    "week": "Week-1",
+    "week": "Week-6",
     "title": "Lecture 6: Python",
     "logo": "fab fa-python",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": [
+      "World Cup",
+      "Mario Easy",
+      "Mario Difficult",
+      "Cash",
+      "Credit",
+      "Readability",
+      "DNA"
+    ]
   },
   {
-    "week": "Week-1",
+    "week": "Week-7",
     "title": "Lecture 7: SQL",
     "logo": "fas fa-database",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Songs", "Movies", "Fiftyville"]
   },
   {
-    "week": "Week-1",
+    "week": "Week-8",
     "title": "Lecture 8: HTML, CSS, Javascript",
     "logo": "fab fa-css3",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Trivia", "Homepage"]
   },
   {
-    "week": "Week-1",
+    "week": "Week-9",
     "title": "Lecture 9: Flask",
     "logo": "fas fa-flask",
-    "solutions": ["Hello", "Mario Easy", "Mario Difficult", "Cash", "Credit"]
+    "solutions": ["Birthdays", "Finance"]
   }
 ]

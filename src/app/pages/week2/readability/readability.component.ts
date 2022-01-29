@@ -46,7 +46,7 @@ export class ReadabilityComponent implements OnInit {
     console.log(parseInt(this.totalRanking));
     
     const RATING: RATING = {
-      name: "hello",
+      name: "readability",
 			rating: this.updatedRating,
       votes: this.updatedVotes,
 		}
