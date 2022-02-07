@@ -3,7 +3,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CS50 } from 'src/app/models/cs50';
 import { RATING } from 'src/app/models/rating';
-import { parseMappings } from '@angular/compiler-cli/src/ngtsc/sourcemaps/src/source_file';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class Cs50Service {
 
   //-------------------Testimonials-------------------
   
-  urlmessages  = "http://localhost:5555/cs50/";
+  urlmessages  = "https://paxzubackend.herokuapp.com/cs50/";
   
   postMessage(message: CS50): Observable<any>{
     return this.http.post(this.urlmessages, message);
@@ -26,8 +25,7 @@ export class Cs50Service {
 
   //-------------------Rating-------------------
   
-  urlrating  = "http://localhost:5555/cs50/rating/";
-  // urlrating  = "https://crudbackendllopez.herokuapp.com/cs50/rating/"
+  urlrating  = "https://paxzubackend.herokuapp.com/cs50/rating/";
   
   postRating(rating: RATING): Observable<any>{
     return this.http.post(this.urlrating, rating);
@@ -48,7 +46,7 @@ export class Cs50Service {
   //-------------------Download Files-------------------
 
 
-  urldownload  = "http://localhost:5555/cs50/download";
+  urldownload  = "https://paxzubackend.herokuapp.com/cs50/download";
   downloadFile(file: string): Observable<any>{
     const param = new HttpParams().set("filename", file);
     const options = {

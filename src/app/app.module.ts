@@ -96,7 +96,8 @@ import { FinanceComponent } from './pages/week9/finance/finance.component';
     MatExpansionModule,
     MatDialogModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
